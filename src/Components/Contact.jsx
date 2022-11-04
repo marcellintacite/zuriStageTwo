@@ -1,8 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import Footer from "./Common/Footer";
 import "./contact.css";
+import validation from "../validation";
 
 export default function Contact() {
+  const [data, setData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    message: "",
+  });
+  const [errors, setErrors] = useState("");
+  console.log(errors);
+  const handleChange = (e) => {
+    const newData = { ...data, [e.target.name]: e.target.value };
+    setData(newData);
+    setErrors(validation(data));
+  };
+
+  const handleTexte = (e) => {
+    const newData = { ...data, message: e.target.value };
+    setData(newData);
+    setErrors(validation(data));
+  };
+
   return (
     <div>
       <div className="contact_container">
@@ -19,21 +40,35 @@ export default function Contact() {
                 <label htmlFor="first_name">First name</label>
                 <input
                   type="text"
-                  name=""
+                  onChange={(e) => handleChange(e)}
+                  value={data.firstName}
+                  name="firstName"
                   id="first_name"
+                  className={errors.firstnameError && "error_input"}
                   placeholder="Enter your first name"
+                  required
                 />
                 <span className="hint">This is a hint text to help user.</span>
+                {errors.firstnameError && (
+                  <span className="error">{errors.firstnameError}</span>
+                )}
               </div>
               <div className="input_group">
                 <label htmlFor="last_name">Last name</label>
                 <input
+                  onChange={(e) => handleChange(e)}
                   type="text"
-                  name="last_name"
+                  className={errors.lastNameError && "error_input"}
+                  value={data.lastName}
+                  name="lastName"
                   placeholder="Enter your last name"
                   id="last_name"
+                  required
                 />
                 <span className="hint">This is a hint text to help user.</span>
+                {errors.lastNameError && (
+                  <span className="error">{errors.lastNameError}</span>
+                )}
               </div>
             </div>
             <div className="input_group">
@@ -41,23 +76,32 @@ export default function Contact() {
               <input
                 type="email"
                 name="email"
+                className={errors.emailError && "error_input"}
+                value={data.email}
                 id="email"
+                onChange={(e) => handleChange(e)}
                 placeholder="yourname@email.com"
               />
               <span className="hint">This is a hint text to help user.</span>
+              {errors.emailError && (
+                <span className="error">{errors.emailError}</span>
+              )}
             </div>
             <div className="input_group">
               <label htmlFor="message">Message</label>
               <textarea
                 name="message"
                 id="message"
+                className={errors.message && "error_input"}
+                value={data.message}
                 placeholder="Send me a message and I'll reply you as soon as possible..."
                 // cols="30"
                 // rows="10"
+                onChange={(e) => handleTexte(e)}
               ></textarea>
             </div>
             <div className="rules">
-              <input type="checkbox" name="rules" id="rules" />
+              <input type="checkbox" name="rules" id="rules" required />
               <label htmlFor="rules">
                 You agree to providing your data to tacite who may contact you.
               </label>
