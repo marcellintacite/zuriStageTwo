@@ -8,6 +8,7 @@ footer {
   padding-top: 10px;
   padding-bottom: 20px;
 }
+
 footer p {
   color: #667085;
   padding-left: 10px;
@@ -20,5 +21,8 @@ footer p {
     margin: auto;
     display: block;
     padding: 0;
+  }
+  footer p {
+    margin-top: -15px;
   }
 }

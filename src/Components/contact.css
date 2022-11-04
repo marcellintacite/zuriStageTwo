@@ -5,12 +5,12 @@
   flex-direction: column;
   align-items: center;
 }
-.container {
+.container_con {
   width: 50%;
   margin: auto;
   margin-top: 50px;
 }
-.container .head {
+.container_con .head {
   width: 100%;
 }
 .head h3 {
@@ -57,6 +57,7 @@ form .names {
 }
 .input_group .hint {
   color: #475467;
+  display: none;
 }
 .input_group input::placeholder {
   color: #667085;
@@ -206,15 +207,30 @@ form #btn__submit:focus {
   .contact_container {
     width: 100%;
   }
-  .contact_container .container {
+  .contact_container .container_con {
     width: 90%;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 30px;
   }
   form {
-    width: 98%;
+    width: 94%;
   }
   form .names {
     display: block;
+  }
+}
+
+@media (max-width: 330px) {
+  .rules label:after {
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 20px;
+    width: 5px;
+    height: 12px;
+    border: 1px solid #1570ef;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    opacity: 0;
   }
 }
