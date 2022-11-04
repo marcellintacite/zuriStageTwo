@@ -4,7 +4,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .container {
@@ -163,21 +162,7 @@ span.dot {
   width: 25px;
   height: 25px;
 }
-footer {
-  width: 100%;
-  height: 80px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  border-top: 1px solid #eaecf0;
-  padding-top: 10px;
-  padding-bottom: 20px;
-}
-footer p {
-  color: #667085;
-  padding-left: 10px;
-  padding-right: 10px;
-}
+
 @media (max-width: 600px) {
   .container {
     width: 100%;
@@ -199,11 +184,5 @@ footer p {
     display: flex;
     font-size: 16px;
     margin-top: 10px;
-  }
-  footer {
-    width: 90%;
-    margin: auto;
-    display: block;
-    padding: 0;
   }
 }

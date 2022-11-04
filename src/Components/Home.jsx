@@ -1,15 +1,14 @@
 import React from "react";
 import "./home.css";
 import profile from "./../assets/profile__img.png";
-import I4G from "./../assets/I4G.png";
 import share from "./../assets/share.png";
 import dot from "./../assets/dot.png";
 import cam from "./../assets/cam.png";
 import slack from "./../assets/slack.png";
-import z from "./../assets/zuri.png";
 import icon from "./../assets/github-logo.png";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Footer from "./Common/Footer";
 
 export default function Home() {
   const [active, setActive] = useState(false);
@@ -73,11 +72,7 @@ export default function Home() {
           <img src={slack} alt="oui" />
           <img src={icon} alt="oui" />
         </section>
-        <footer>
-          <img src={z} alt="Zuri intershop" />
-          <p>HNG Internship 9 Frontend Task</p>
-          <img src={I4G} alt="Zuri intershop" />
-        </footer>
+        <Footer />
       </div>
     </div>
   );

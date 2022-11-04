@@ -1,0 +1,220 @@
+.contact_container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container {
+  width: 50%;
+  margin: auto;
+  margin-top: 50px;
+}
+.container .head {
+  width: 100%;
+}
+.head h3 {
+  font-weight: 600;
+  font-size: 36px;
+  margin: 0;
+  letter-spacing: -0.02em;
+  color: #101828;
+}
+.head p {
+  font-weight: 400;
+  font-size: 20px;
+  color: #475467;
+}
+form {
+  width: 100%;
+}
+form .names {
+  display: flex;
+}
+.names .input_group {
+  width: 100%;
+  margin-right: 20px;
+}
+.input_group {
+  margin-top: 15px;
+}
+.input_group label {
+  color: #344054;
+}
+.input_group input {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #d0d5dd;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  border-radius: 5px;
+  margin-top: 5px;
+  padding-left: 10px;
+  outline: none;
+  height: 35px;
+  margin-bottom: 5px;
+  color: #101828;
+  transition: all 0.3s ease;
+}
+.input_group .hint {
+  color: #475467;
+}
+.input_group input::placeholder {
+  color: #667085;
+}
+.input_group input:focus {
+  border: 1px solid #84caff;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+}
+
+.input_group textarea {
+  width: 100%;
+  text-decoration: none;
+  outline: none;
+  resize: none;
+  background: #ffffff;
+  border: 1px solid #d0d5dd;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  border-radius: 5px;
+  height: 100px;
+  margin-top: 5px;
+  font-family: "Inter", sans-serif;
+  padding: 8px;
+}
+.input_group textarea::placeholder {
+  font-family: "Inter", sans-serif;
+}
+.rules {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  color: #475467;
+}
+.rules input {
+  border: 1px solid #d0d5dd;
+  height: 20px;
+  width: 20px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  outline: none;
+  border-radius: 5px;
+  transition-duration: 0.3s;
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+.rules input:checked {
+  background-color: #fff;
+}
+
+.rules label {
+  padding-left: 30px;
+  position: relative;
+  cursor: pointer;
+}
+
+.rules label:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  margin-top: -10px;
+  left: 0;
+  display: block;
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  border: 1px solid #d0d5dd;
+  border-radius: 5px;
+}
+.rules label:hover:before {
+  background-color: #d1e9ff;
+}
+.rules label:after {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 2px;
+  width: 5px;
+  height: 12px;
+  border: 1px solid #1570ef;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+}
+
+.rules input:checked + label:after {
+  opacity: 1;
+}
+.rules input:checked + label::before {
+  border-color: #1570ef;
+}
+.rules input:focus + label::before {
+  box-shadow: 0px 0px 0px 4px #d1e9ff;
+}
+.rules input:disabled + label::before {
+  background: #f2f4f7;
+  border: 1px solid #d0d5dd;
+}
+form #btn__submit {
+  width: 100%;
+  margin-top: 20px;
+  height: 40px;
+  background: #1570ef;
+  border: 1px solid #1570ef;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  border-radius: 5px;
+  color: #fff;
+  transition: all 0.2s ease-in;
+}
+form #btn__submit:hover {
+  background: #175cd3;
+  cursor: pointer;
+  border: 1px solid #175cd3;
+}
+
+form #btn__submit:focus {
+  background: #1570ef;
+  border: 1px solid #1570ef;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #d1e9ff;
+}
+
+.foot {
+  width: 90%;
+  margin: auto;
+  margin-top: 100px;
+}
+
+@media (max-width: 1029px) {
+  .rules label:after {
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 10px;
+    width: 5px;
+    height: 12px;
+    border: 1px solid #1570ef;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 588px) {
+  .contact_container {
+    width: 100%;
+  }
+  .contact_container .container {
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+  }
+  form {
+    width: 98%;
+  }
+  form .names {
+    display: block;
+  }
+}
