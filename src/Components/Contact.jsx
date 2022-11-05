@@ -42,6 +42,7 @@ export default function Contact() {
                   type="text"
                   onChange={(e) => handleChange(e)}
                   value={data.firstName}
+                  onKeyDown={(e) => handleChange(e)}
                   name="firstName"
                   id="first_name"
                   className={errors.firstnameError && "error_input"}
@@ -61,6 +62,7 @@ export default function Contact() {
                   className={errors.lastNameError && "error_input"}
                   value={data.lastName}
                   name="lastName"
+                  onKeyDown={(e) => handleChange(e)}
                   placeholder="Enter your last name"
                   id="last_name"
                   required
@@ -79,6 +81,7 @@ export default function Contact() {
                 className={errors.emailError && "error_input"}
                 value={data.email}
                 id="email"
+                onKeyDown={(e) => handleChange(e)}
                 onChange={(e) => handleChange(e)}
                 placeholder="yourname@email.com"
               />
@@ -98,6 +101,7 @@ export default function Contact() {
                 // cols="30"
                 // rows="10"
                 onChange={(e) => handleTexte(e)}
+                onKeyDown={(e) => handleTexte(e)}
               ></textarea>
             </div>
             <div className="rules">
