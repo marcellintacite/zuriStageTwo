@@ -45,21 +45,21 @@ export default function Contact() {
                   onKeyDown={(e) => handleChange(e)}
                   name="firstName"
                   id="first_name"
-                  className={errors.firstnameError && "error_input"}
+                  // className={errors.firstnameError && "error_input"}
                   placeholder="Enter your first name"
                   required
                 />
                 <span className="hint">This is a hint text to help user.</span>
-                {errors.firstnameError && (
+                {/* {errors.firstnameError && (
                   <span className="error">{errors.firstnameError}</span>
-                )}
+                )} */}
               </div>
               <div className="input_group">
                 <label htmlFor="last_name">Last name</label>
                 <input
                   onChange={(e) => handleChange(e)}
                   type="text"
-                  className={errors.lastNameError && "error_input"}
+                  // className={errors.lastNameError && "error_input"}
                   value={data.lastName}
                   name="lastName"
                   onKeyDown={(e) => handleChange(e)}
@@ -68,9 +68,9 @@ export default function Contact() {
                   required
                 />
                 <span className="hint">This is a hint text to help user.</span>
-                {errors.lastNameError && (
+                {/* {errors.lastNameError && (
                   <span className="error">{errors.lastNameError}</span>
-                )}
+                )} */}
               </div>
             </div>
             <div className="input_group">
@@ -78,26 +78,28 @@ export default function Contact() {
               <input
                 type="email"
                 name="email"
-                className={errors.emailError && "error_input"}
+                // className={errors.emailError && "error_input"}
                 value={data.email}
                 id="email"
                 onKeyDown={(e) => handleChange(e)}
                 onChange={(e) => handleChange(e)}
                 placeholder="yourname@email.com"
+                required
               />
               <span className="hint">This is a hint text to help user.</span>
-              {errors.emailError && (
+              {/* {errors.emailError && (
                 <span className="error">{errors.emailError}</span>
-              )}
+              )} */}
             </div>
             <div className="input_group">
               <label htmlFor="message">Message</label>
               <textarea
                 name="message"
                 id="message"
-                className={errors.message && "error_input"}
+                // className={errors.message && "error_input"}
                 value={data.message}
                 placeholder="Send me a message and I'll reply you as soon as possible..."
+                required
                 // cols="30"
                 // rows="10"
                 onChange={(e) => handleTexte(e)}
